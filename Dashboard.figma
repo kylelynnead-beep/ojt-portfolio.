@@ -1,0 +1,231 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Mapuma Dashboard</title>
+    <!-- Tailwind CSS CDN -->
+    <script src="https://cdn.tailwindcss.com"></script>
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+</head>
+<body class="bg-gray-100 font-sans flex h-screen overflow-hidden">
+
+    <!-- SIDEBAR -->
+    <aside class="w-64 bg-[#0B0F19] text-gray-400 flex flex-col justify-between p-4 border-r border-gray-800">
+        <div>
+            <!-- Logo / Brand -->
+            <div class="flex items-center space-x-3 px-2 mb-8">
+                <div class="bg-blue-600 text-white p-2 rounded-lg">
+                    <i class="fa-solid fa-store"></i>
+                </div>
+                <div>
+                    <h1 class="text-white font-bold text-lg leading-tight">Mapuma</h1>
+                    <p class="text-xs text-gray-500">Market payments</p>
+                </div>
+            </div>
+
+            <!-- Workspace Section -->
+            <div class="mb-6">
+                <p class="text-xs font-semibold uppercase tracking-wider text-gray-500 px-2 mb-2">Workspace</p>
+                <nav class="space-y-1">
+                    <a href="#" class="flex items-center space-x-3 px-3 py-2.5 rounded-xl bg-violet-600 text-white font-medium text-sm">
+                        <i class="fa-solid fa-chart-pie"></i>
+                        <span>Overview</span>
+                    </a>
+                    <a href="#" class="flex items-center space-x-3 px-3 py-2.5 rounded-xl hover:bg-gray-800 hover:text-gray-200 text-sm transition">
+                        <i class="fa-solid fa-shop"></i>
+                        <span>Stalls</span>
+                    </a>
+                    <a href="#" class="flex items-center space-x-3 px-3 py-2.5 rounded-xl hover:bg-gray-800 hover:text-gray-200 text-sm transition">
+                        <i class="fa-solid fa-users"></i>
+                        <span>Collectors</span>
+                    </a>
+                    <a href="#" class="flex items-center space-x-3 px-3 py-2.5 rounded-xl hover:bg-gray-800 hover:text-gray-200 text-sm transition">
+                        <i class="fa-solid fa-user-tie"></i>
+                        <span>Vendors</span>
+                    </a>
+                    <a href="#" class="flex items-center space-x-3 px-3 py-2.5 rounded-xl hover:bg-gray-800 hover:text-gray-200 text-sm transition">
+                        <i class="fa-solid fa-receipt"></i>
+                        <span>Fee rates</span>
+                    </a>
+                    <a href="#" class="flex items-center space-x-3 px-3 py-2.5 rounded-xl hover:bg-gray-800 hover:text-gray-200 text-sm transition justify-between">
+                        <div class="flex items-center space-x-3">
+                            <i class="fa-solid fa-wallet"></i>
+                            <span>Payments</span>
+                        </div>
+                        <span class="bg-gray-800 text-gray-300 text-xs px-2 py-0.5 rounded-full">12</span>
+                    </a>
+                    <a href="#" class="flex items-center space-x-3 px-3 py-2.5 rounded-xl hover:bg-gray-800 hover:text-gray-200 text-sm transition">
+                        <i class="fa-solid fa-file-lines"></i>
+                        <span>Reports</span>
+                    </a>
+                </nav>
+            </div>
+
+            <!-- Manage Section -->
+            <div>
+                <p class="text-xs font-semibold uppercase tracking-wider text-gray-500 px-2 mb-2">Manage</p>
+                <nav class="space-y-1">
+                    <a href="#" class="flex items-center space-x-3 px-3 py-2.5 rounded-xl hover:bg-gray-800 hover:text-gray-200 text-sm transition">
+                        <i class="fa-solid fa-shield-halved"></i>
+                        <span>Audit logs</span>
+                    </a>
+                    <a href="#" class="flex items-center space-x-3 px-3 py-2.5 rounded-xl hover:bg-gray-800 hover:text-gray-200 text-sm transition">
+                        <i class="fa-solid fa-bullhorn"></i>
+                        <span>Announcements</span>
+                    </a>
+                    <a href="#" class="flex items-center space-x-3 px-3 py-2.5 rounded-xl hover:bg-gray-800 hover:text-gray-200 text-sm transition">
+                        <i class="fa-solid fa-bell"></i>
+                        <span>Notifications</span>
+                    </a>
+                </nav>
+            </div>
+        </div>
+    </aside>
+
+    <!-- MAIN CONTENT AREA -->
+    <main class="flex-1 flex flex-col overflow-y-auto">
+        <!-- Top Navigation -->
+        <header class="bg-white border-b border-gray-200 px-8 py-4 flex justify-between items-center">
+            <div>
+                <h2 class="text-xl font-bold text-gray-900">Good morning, Ara</h2>
+                <p class="text-xs text-gray-500">Here's what's happening in your market today.</p>
+            </div>
+            <div class="flex items-center space-x-4">
+                <div class="relative">
+                    <span class="absolute inset-y-0 left-0 flex items-center pl-3 text-gray-400">
+                        <i class="fa-solid fa-magnifying-glass text-sm"></i>
+                    </span>
+                    <input type="text" placeholder="Search anything" class="pl-9 pr-12 py-2 bg-gray-50 border border-gray-200 rounded-lg text-sm focus:outline-none focus:border-violet-500 w-64">
+                    <span class="absolute inset-y-0 right-0 flex items-center pr-3 text-gray-400 text-xs bg-gray-200 px-1.5 my-1.5 rounded">⌘ K</span>
+                </div>
+                <button class="p-2 border border-gray-200 rounded-lg text-gray-600 hover:bg-gray-50 relative">
+                    <i class="fa-regular fa-bell"></i>
+                </button>
+            </div>
+        </header>
+
+        <!-- Dashboard Body -->
+        <div class="p-8 space-y-6">
+            <!-- Row 1: Charts Section -->
+            <div class="grid grid-cols-1 lg:grid-cols-3 gap-6">
+                <!-- Line Chart Card (Spans 2 columns) -->
+                <div class="bg-white p-6 rounded-2xl border border-gray-200 lg:col-span-2 flex flex-col justify-between">
+                    <div class="flex justify-between items-center mb-4">
+                        <div class="text-sm font-medium text-gray-500">Market Overview</div>
+                    </div>
+                    <!-- Placeholder for Line Chart Graphic -->
+                    <div class="h-48 flex items-center justify-center bg-violet-50/50 rounded-xl border border-violet-100 text-violet-400 text-sm">
+                        [Line Chart Visual - Sun to Sat]
+                    </div>
+                </div>
+
+                <!-- Donut Chart Card -->
+                <div class="bg-white p-6 rounded-2xl border border-gray-200 flex flex-col justify-between">
+                    <div class="flex flex-col items-center justify-center my-auto">
+                        <div class="w-32 h-32 rounded-full border-8 border-violet-600 border-t-emerald-500 flex flex-col items-center justify-center">
+                            <span class="text-xs text-gray-400">Total</span>
+                            <span class="font-bold text-gray-800 text-lg">₱1,115</span>
+                        </div>
+                    </div>
+                    <div class="space-y-2 mt-4 text-xs">
+                        <div class="flex justify-between items-center">
+                            <span class="flex items-center space-x-2"><span class="w-2.5 h-2.5 rounded-full bg-violet-600"></span><span class="text-gray-600 font-medium">Fish</span></span>
+                            <span class="text-gray-500">56% · ₱625</span>
+                        </div>
+                        <div class="flex justify-between items-center">
+                            <span class="flex items-center space-x-2"><span class="w-2.5 h-2.5 rounded-full bg-emerald-500"></span><span class="text-gray-600 font-medium">Meat</span></span>
+                            <span class="text-gray-500">44% · ₱490</span>
+                        </div>
+                    </div>
+                </div>
+            </div>
+
+            <!-- Row 2: Lists Section -->
+            <div class="grid grid-cols-1 lg:grid-cols-2 gap-6">
+                <!-- Recent Payments -->
+                <div class="bg-white p-6 rounded-2xl border border-gray-200">
+                    <div class="flex justify-between items-center mb-4">
+                        <div>
+                            <h3 class="font-bold text-gray-900 text-base">Recent payments</h3>
+                            <p class="text-xs text-gray-400">Latest successful collections</p>
+                        </div>
+                        <a href="#" class="text-xs font-semibold text-violet-600 hover:underline">View all <i class="fa-solid fa-arrow-right text-[10px]"></i></a>
+                    </div>
+                    <div class="space-y-3">
+                        <div class="flex items-center justify-between p-2 hover:bg-gray-50 rounded-xl transition">
+                            <div class="flex items-center space-x-3">
+                                <div class="w-9 h-9 rounded-full bg-violet-100 text-violet-600 flex items-center justify-center font-bold text-xs">JO</div>
+                                <div>
+                                    <h4 class="text-sm font-semibold text-gray-800">Judea Ortega</h4>
+                                    <p class="text-xs text-gray-400">ST-001 · 10:42 AM</p>
+                                </div>
+                            </div>
+                            <div class="text-right">
+                                <span class="font-bold text-sm text-gray-800">₱260.00</span>
+                                <span class="block text-[10px] bg-emerald-50 text-emerald-600 font-medium px-2 py-0.5 rounded-full mt-0.5">Paid</span>
+                            </div>
+                        </div>
+                        <div class="flex items-center justify-between p-2 hover:bg-gray-50 rounded-xl transition">
+                            <div class="flex items-center space-x-3">
+                                <div class="w-9 h-9 rounded-full bg-sky-100 text-sky-600 flex items-center justify-center font-bold text-xs">KD</div>
+                                <div>
+                                    <h4 class="text-sm font-semibold text-gray-800">Kyle Lynne Dela Cruz</h4>
+                                    <p class="text-xs text-gray-400">ST-002 · 9:18 AM</p>
+                                </div>
+                            </div>
+                            <div class="text-right">
+                                <span class="font-bold text-sm text-gray-800">₱247.50</span>
+                                <span class="block text-[10px] bg-emerald-50 text-emerald-600 font-medium px-2 py-0.5 rounded-full mt-0.5">Paid</span>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+
+                <!-- Pending Today -->
+                <div class="bg-white p-6 rounded-2xl border border-gray-200">
+                    <div class="flex justify-between items-center mb-4">
+                        <div>
+                            <h3 class="font-bold text-gray-900 text-base">Pending today</h3>
+                            <p class="text-xs text-gray-400">2 vendors awaiting collection</p>
+                        </div>
+                    </div>
+                    <div class="space-y-3">
+                        <div class="flex items-center justify-between p-2 hover:bg-gray-50 rounded-xl transition">
+                            <div class="flex items-center space-x-3">
+                                <div class="w-9 h-9 rounded-full bg-amber-50 text-amber-600 flex items-center justify-center text-sm">
+                                    <i class="fa-solid fa-store"></i>
+                                </div>
+                                <div>
+                                    <h4 class="text-sm font-semibold text-gray-800">Sheineah Ramirez</h4>
+                                    <p class="text-xs text-gray-400">ST-003 · Fish section</p>
+                                </div>
+                            </div>
+                            <div class="text-right">
+                                <span class="font-bold text-sm text-gray-800">₱252.50</span>
+                                <span class="block text-[10px] text-gray-400 mt-0.5">Daily rate</span>
+                            </div>
+                        </div>
+                        <div class="flex items-center justify-between p-2 hover:bg-gray-50 rounded-xl transition">
+                            <div class="flex items-center space-x-3">
+                                <div class="w-9 h-9 rounded-full bg-amber-50 text-amber-600 flex items-center justify-center text-sm">
+                                    <i class="fa-solid fa-store"></i>
+                                </div>
+                                <div>
+                                    <h4 class="text-sm font-semibold text-gray-800">Jasper Berboso</h4>
+                                    <p class="text-xs text-gray-400">ST-004 · Meat section</p>
+                                </div>
+                            </div>
+                            <div class="text-right">
+                                <span class="font-bold text-sm text-gray-800">₱200.00</span>
+                                <span class="block text-[10px] text-gray-400 mt-0.5">Daily rate</span>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </main>
+
+</body>
+</html>
